@@ -5,21 +5,21 @@ export const state = () => ({
 });
 
 const actions = {
-  async getUser({ commit }) {
+  async getCoor({ commit }) {
     const { data } = await this.$axios.get("https://randomuser.me/api/");
     console.log(data.results[0]);
-    commit("SET_USER", data.results[0]);
+    commit("SET_COOR", data.results[0]);
   }
 };
 
 const mutations = {
-  SET_USER(state, user) {
-    state.user = user;
+  SET_COOR(state, coor) {
+    state.coor = coor;
   }
 };
 
 const getters = {
-  user(state) {
-    return state.user;
+  coor(state) {
+    return state.coor;
   }
 };
